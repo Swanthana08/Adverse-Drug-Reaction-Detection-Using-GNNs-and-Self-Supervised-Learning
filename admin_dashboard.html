@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('static/static/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .header {
+            background: #222;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .nav {
+            background: #444;
+            padding: 12px 30px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .nav a:hover {
+            background: #fff;
+            color: #222;
+        }
+
+        .section {
+            padding: 30px 40px;
+        }
+
+        h3 {
+            margin-top: 40px;
+            color: #f5e8e8;
+            font-size: 24px;
+            border-left: 6px solid #4CAF50;
+            padding-left: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 14px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f7f7f7;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            th, td {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">Welcome Admin</div>
+
+    <div class="nav">
+        <a href="#users">👤 User Details</a>
+        <a href="#predictions">🧠 Prediction Details</a>
+        <a href="{{ url_for('logout') }}">🚪 Logout</a>
+    </div>
+
+    <div class="section">
+        <h3 id="users">👤 Registered Users</h3>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Location</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.mailid }}</td>
+                <td>{{ user.mobile }}</td>
+                <td>{{ user.location }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h3 id="predictions">🧠 Prediction Details</h3>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Filename</th>
+                <th>Result</th>
+            </tr>
+            {% for pred in predictions %}
+            <tr>
+                <td>{{ pred.username }}</td>
+                <td>{{ pred.filename }}</td>
+                <td>{{ pred.result }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>

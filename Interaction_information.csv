@@ -1,0 +1,7 @@
+Description,side_effect_id
+Drug1 can cause a decrease in the absorption of #Drug2 resulting in a reduced serum concentration and potentially a decrease in efficacy.,DDI type 0
+Drug1 may increase the excretion rate of #Drug2 which could result in a lower serum level and potentially a reduction in efficacy.,DDI type 16
+Drug1 may increase the atrioventricular blocking (AV block) activities of #Drug2.,DDI type 51
+Drug1 may increase the hypoglycemic activities of #Drug2.,DDI type 64
+Drug1 may increase the myopathic rhabdomyolysis activities of #Drug2.,DDI type 71
+Drug1 may increase the respiratory depressant activities of #Drug2.,DDI type 77

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Threat Recognition{% endblock %}</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            background: url('static/static/bg.jpeg') no-repeat center center fixed; 
+            background-size: cover; 
+            margin: 0; 
+            color: white;
+        }
+        .navbar {
+            background: #333; 
+            overflow: hidden; 
+            padding: 14px;
+        }
+        .navbar a {
+            color: white; 
+            padding: 14px 20px; 
+            text-decoration: none; 
+            float: left;
+        }
+        .navbar a:hover { 
+            background: #ddd; 
+            color: black; 
+        }
+        .container { 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Full screen minus navbar height */
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 36px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Registration</a>
+        <a href="{{ url_for('admin_login') }}">Admin</a>
+    </div>
+    
+    <div class="container">
+        <h2>Adverse Drug Reactions Through Drug Interaction Analysis with  Graph Neural Networks and Self Supervised Learning</h2>
+    </div>
+</body>
+</html>

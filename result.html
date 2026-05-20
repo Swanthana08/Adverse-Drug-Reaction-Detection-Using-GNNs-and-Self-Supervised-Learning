@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('static/static/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+        .result-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .prediction {
+            font-size: 24px;
+            color: #2e8b57;
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-container">
+        <h2>Prediction Result</h2>
+        <div class="prediction">{{ result }}</div>
+        <a href="/predict">Try Another Prediction</a>
+    </div>
+
+</body>
+</html>
